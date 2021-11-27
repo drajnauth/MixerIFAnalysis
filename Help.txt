@@ -1,27 +1,49 @@
-This program analyzes inputs and outputs from a mixer to identify frequencies that could fold back into the passband
-The program assumes that an RF frequency is fed into a mixer along with an LO frequency which generates an IF frequency
-The IF frequency may either be the sum RF+LO or the difference of RF-LO 
+				This program analyzes inputs and outputs from a mixer to identify frequencies that could fold back into the passband. 
+				
+				The program assumes that an RF frequency is fed into a mixer along with an LO frequency which generates an IF output frequency 
+				The IF frequency may either be the sum RF+LO or the difference of RF-LO. 
+				
+				
+				Its a work in progress and any 'constructive' feed back regarding its accuracy would be appreciated.  
+				I would very much like to make this program accurate as possible. 
+				
+				
+				First, enter the RF frequency along with the bandwidth expected for the frequency.  It is best to enter the middle frequency 
+				 of the BAND  (e.g. 7150000). For bandwidth, it is best to enter the entire bandwidth of the BAND (e.g. 250000) 
+				
 
-Enter the RF frequency along with the bandwidth expected for the frequency.  It is best to enter the middle frequenc of the BAND.
-For bandwidth, it is best to enter the entire bandwidth of the BAND (e.g. 250000)
+				Next, enter the IF frequency that is expected to be generated along with the bandwidth of the IF signal. If the IF is feeding 
+				a crystal filter, then enter the filter centre frequency and the bandwidth of the crystal filter (e.g. 3000) 
+				
 
-Next, enter the IF frequency that is expected to be generated along with the bandwidth of the IF signal. If the IF is feeding
-a crystal filter, then enter the bandwith of the crystal filter (e.g. 3000)
+				You now select how the IF is generated. Select the sum (RF+LO) or difference (RF-LO) button.  The program will automatically 
+				calculate the LO frequency. 
+				
 
-You now select how the IF is generated. Select the sum (RF+LO) or difference (RF-LO) button.  The program will automatically
-calculate the LO frequency.
+				You can specific if the LO frequency will have 3 or 5 harmonics that will mix with RF.  For a square wave use 5 for a sine wave (dirty) use 3 harmonics.
+				
 
-You can specific if the LO frequency will be a square wave.  If a square wave is used, then the first 4 harmonics of the square wave 
-will be used in the analysis. If unchecked, a Sine wave is assumed and 3 harmonics will be used for the analysis. 
+				If the radio will have a BPF as part of the Transmit (TX) chain, select the BPF analysis button and then enter the appoximate  
+				bandwidth.  The bandwidth sould be 1/2 of the approximate bandwidth of the BPF (e.g. 500000, 1500000, etc).  The bandwidth is used identify if any 
+				mixed artifacts are folded back within the BPF filter bandwidth of the specified RF BAND (i.e. passband of RF +/- RF_Bandwidth +/- BPF_Bandwidth).   
+				
 
-If the radio will have a BPF as part of the Transmit (TX) chain, select the BPF analysis button and then enter the appoximate 
-bandwidth (e.g. 400000).  This is used to determine if any fequencies will fold back into the passband of the BPF which is around 
-the specified RF frequency.
+				Finally, select the type of analysis needed.  Harmonic Analysis only means that harmonics of the LO and BFO will be mixed  
+				together to see if any frequencies fold back to interfere with the RF frequency or the IF frequency during Receive (Rx) or 
+				Transmit (Tx). 
+				
 
-Finally, select the type of analysis needed.  Harmonic Analysis only means that only harmonics of the LO and BFO will be mixed 
-together to see if any frequencies fold back to interfere with the RF frequency or the IF frequencies during Receive (Rx) or 
-Transmit (Tx).
-
-The Harmonic & Byproduct analysis will also identify if any of the mixed artifacts will interfere with each other and interfere
-with the RF or IF.  It is important to carefully observe the frequencies that mix together. In majority of cases there frequencies 
-are so high that their power level will be very small and may be noise. That is it may not be strong enought to cause interference.  
+				The Harmonic & Byproduct analysis will  identify if any of the LO/RF/IF mixed artifacts will further mix with each other and interfere 
+				with the RF or IF.  I don't believe that mixing byproduct mix together in a mixer otherwise this would be an infinite solution problem.  
+				In majority of cases these frequencies are so high that their power level will be very small and may be noise. Also, your filters will  
+				typically remove any of this components. That is it may not be strong enough to cause interference. 
+				
+				
+				Each harmonic is typicall reduced by a certain amount of db.  You can specify how much subsequent harmonics would be down via the  
+				'Harmonic dB Atten' field.  This is used to approximate the power of mixed byproduct. If mixing byproducts can futher mix, then + 
+				amound of loss for each round of mixing is weaker by the 'Conv Loss' field.  This values are EXPERIMENTAL and should not be taken  
+				at face value.  This is a work in progress and the values should not be trusted.
+				
+				
+				Software (c) VE3OOI. All rights reserved and provided 'as is', without warranty or support of any kind;
+		
