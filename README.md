@@ -1,4 +1,4 @@
-# FilterAnalyzer
+# MixerIFAnalysis
 This program analyzes inputs and outputs from a mixer to identify frequencies that could fold back into the passband. The program assumes that an RF frequency is fed into a mixer along with an LO frequency which generates an IF output frequency.  The IF frequency may either be the sum RF+LO or the difference of RF-LO. 
 				
 Its a work in progress and any 'constructive' feed back regarding its accuracy would be appreciated. I wouldvery much like to make this program accurate as possible. 
