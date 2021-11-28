@@ -1,1 +1,1 @@
-java -jar MixerIFAnalysis0.2.jar
+java -jar MixerIFAnalysisv0.2.jar
