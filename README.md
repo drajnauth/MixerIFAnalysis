@@ -6,7 +6,7 @@ Its a work in progress and any 'constructive' feed back regarding its accuracy w
 Software (c) VE3OOI. All rights reserved and provided 'as is', without warranty or support of any kind;
 
 The program is written in Java and developed using Eclipse. The program requires Java VM to be installed.  You need to understand how to run a Java program using the Java VM.  Currently only Java 1.8.0_811 is supported and can be downloaded from https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
-Download "Java SE Runtime Environment 8u311".  To run the program there is a MixerIFAnalysisv0.2.jar file or a MixerIFAnalysisv.bat. Run the bat file if you don't understand how to run a java program.   
+Download "Java SE Runtime Environment 8u311".  To run the program there is a MixerIFAnalysisv0.2.jar file or a MixerIFAnalysis.bat. Run the bat file if you don't understand how to run a java program.   
 
 
 Usage:
